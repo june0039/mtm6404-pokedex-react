@@ -39,10 +39,12 @@ function Pokemon() {
                     <img className="img-fluid" src={pokemon.image} alt={pokemon.name} />
 
                 </Col>
+                <Col>
+                    <ul>
+                        {pokemon.abilities.map((ability, index) => <li key={index}>{ability.ability.name}</li>)}
+                    </ul>
+                </Col>
             </Row>
-            <ul>
-                {pokemon.abilities.map((ability, index) => <li key={index}>{ability.ability.name}</li>)}
-            </ul>
         </>
     )
 }
