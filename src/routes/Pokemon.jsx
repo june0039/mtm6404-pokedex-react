@@ -16,7 +16,7 @@ function Pokemon() {
 
     useEffect(() => {
         //valid 200 ok
-        //invalid 404 pGE NOT FOUND
+        //invalid 404 PAGE NOT FOUND
         // CHECK TO MAKE SURE IT IS 200
 
 

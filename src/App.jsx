@@ -12,7 +12,7 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink to="" className={isActive => isActive ? 'nav-link active' : 'nav-link'}>Pokedex</NavLink >
+                <NavLink to="/" className={isActive => isActive ? 'nav-link active' : 'nav-link'}>Pokedex</NavLink >
               </li>
               <li class="nav-item">
                 <NavLink to="/" className={isActive => isActive ? 'nav-link active' : 'nav-link'}>Items</NavLink >
