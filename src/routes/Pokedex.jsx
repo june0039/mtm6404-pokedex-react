@@ -13,7 +13,19 @@ function Pokedex() {
     }, [])
 
     return (
-        <h1>Pokedex</h1>
+        <>
+            <Row>
+                <Col>
+                    <h1 className="display-4">Pokedex</h1>
+                </Col>
+            </Row>
+            <Row>
+
+                {pokedex.map(pokemon => <PokemonCard key={pokemon.name} pokemon={pokemon} />)}
+
+            </Row>
+        </>
+
     )
 }
 
