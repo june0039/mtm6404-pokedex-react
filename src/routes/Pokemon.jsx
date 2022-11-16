@@ -17,7 +17,14 @@ function Pokemon() {
 
         fetch('https://pokeapi.co/api/v2/pokemon/' + params.name)
             .then(response => response.json())
-            .then(json => { setPokedex(json.results) })
+            .then(json => {
+                setPokemon({
+                    name: json.name,
+                    id: json.id,
+                    image: json.sprites.other['official-artwork'].front_default,
+                    abilities: json.abilities
+                })
+            })
     })
 
     return (
