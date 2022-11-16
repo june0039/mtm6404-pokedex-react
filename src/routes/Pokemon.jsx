@@ -28,7 +28,22 @@ function Pokemon() {
     })
 
     return (
-        <h1>{params.name}</h1>
+        <>
+            <Row>
+                <Col>
+                    <h1 className="display-4 py-3 text-capitalize">{pokemon.name}</h1>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <img className="img-fluid" src={pokemon.image} alt={pokemon.name} />
+
+                </Col>
+            </Row>
+            <ul>
+                {pokemon.abilities.map((ability, index) => <li key={index}>{ability.ability.name}</li>)}
+            </ul>
+        </>
     )
 }
 
