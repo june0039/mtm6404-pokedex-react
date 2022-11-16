@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Row from '../components/Row'
 import Col from '../components/Col'
 
 
 function Pokemon() {
     const params = useParams()
+    const navigate = useNavigate()
     const [pokemon, setPokemon] = useState({
         name: '',
         id: '',
@@ -14,9 +15,13 @@ function Pokemon() {
     })
 
     useEffect(() => {
+        //valid 200 ok
+        //invalid 404 pGE NOT FOUND
+        // CHECK TO MAKE SURE IT IS 200
+
 
         fetch('https://pokeapi.co/api/v2/pokemon/' + params.name)
-            .then(response => response.json())
+            .then(response => response.status === 200 ? response.json() : navigate('/'))
             .then(json => {
                 setPokemon({
                     name: json.name,
